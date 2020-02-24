@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
         if @user.save()
             flash[:success] = 'you are now registered!'
-            redirect_to root_path()
+            redirect_to home_path
         else
             render 'new'
         end 
