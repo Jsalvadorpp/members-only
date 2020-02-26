@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
 
         if user 
             if user.authenticate(password)
+                #remember login session option
+                params['session']['remember_me'] == '1' ? remember_session(user) : forget_session(user)
+
                 log_in(user)
+              
                 flash['success'] = 'Successfully Logged In!'
                 redirect_to home_path
             else
@@ -25,6 +29,7 @@ class SessionsController < ApplicationController
     end
 
     def logout
+        forget_session(current_user)
         session['user_id'] = nil
         flash['success'] = 'Successfully Logged Out!'
         redirect_to home_path
