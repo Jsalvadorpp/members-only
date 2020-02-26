@@ -1,0 +1,17 @@
+<%= form_for(:session, url: login_path,html: {class: 'container'}) do |f| %>
+
+    <h1>Login</h1>
+
+    <div class='form-group'>
+        <%= f.label :email %>
+        <%= f.email_field :email , class: 'form-control' , placeholder: 'email'%>
+    </div>
+
+    <div class='form-group'>
+        <%= f.label :password %>
+        <%= f.password_field :password , class: 'form-control' , placeholder: 'password'%>
+    </div>
+
+    <%= f.submit "Login", class: "btn btn-primary" %>
+
+<% end %>

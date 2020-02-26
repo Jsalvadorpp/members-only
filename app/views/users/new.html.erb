@@ -3,14 +3,6 @@
     <h1>Create a new user</h1>
 
     <%= render 'users/error_messages' %>
-    <% if flash.any? %>
-        
-        <% flash.each do |type,message|%>
-        <div class="alert alert-<%= type %>">
-            <%= message %>
-        </div>
-    <% end %>
-    <% end %>
 
     <div class='form-group'>
         <%= f.label :username %>
