@@ -1,0 +1,10 @@
+<div class='card post shadow'>
+    <h3 class='card-header'><%= post.title %> </h3>
+    <div class='card-body'>
+        <% if is_logged? %>
+            <p>By: <span class='text-primary'><%= post.user.username %></span></p>
+        <% end %>
+        <p><%= post.bodyText %></p>
+    </div>
+    <span class='card-footer'>Posted <%= time_ago_in_words(post.created_at) %> ago.</span>
+</div>
