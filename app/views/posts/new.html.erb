@@ -1,0 +1,19 @@
+<%= form_for(@post,html: {class: 'container'}) do |f| %>
+
+    <h1>Make a new post</h1>
+
+    <%= render 'posts/error_messages' %>
+
+    <div class='form-group'>
+        <%= f.label :title %>
+        <%= f.text_field :title , class: 'form-control' , placeholder: 'title' %>
+    </div>
+
+    <div class='form-group'>
+        <%= f.text_area :bodyText , class: 'form-control' , placeholder: 'Write Body Text here' %>
+    </div>
+  
+    
+    <%= f.submit "Post", class: "btn btn-primary" %>
+
+<% end %>

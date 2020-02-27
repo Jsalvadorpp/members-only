@@ -22,6 +22,7 @@
 
         <ul class='navbar-nav ml-auto'>
             <% if is_logged? %>
+                <li class='<%= 'active' if current_page?(new_post_path) %>'><%= link_to 'New post', new_post_path , class: 'nav-link' %></li>
                  <li><%= link_to 'Logout', logout_path, class: 'nav-link' %></li>
             <% else %>
                 <li class='<%= 'active' if current_page?(signup_path) %>'><%= link_to 'Signup', signup_path , class: 'nav-link' %></li>
